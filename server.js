@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
-const app = express()
+const app = express();
+var port = process.env.PORT || 8000;
 
 const apiKey = '41264f7eab00cbfa89eb61ebc26f703a';
 
@@ -36,6 +37,6 @@ app.post('/', function (req, res) {
     });
 });
 
-app.listen(8000, function () {
-    console.log('Example app listening on port 8000!')
+app.listen(port, function () {
+    console.log('Example app listening on port' + port);
 });
