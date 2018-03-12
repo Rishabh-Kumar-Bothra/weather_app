@@ -7,11 +7,15 @@ const apiKey = '41264f7eab00cbfa89eb61ebc26f703a';
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
     res.render('index', {weather: null, error: null});
-})
+});
+
+app.get('*',function (req, res) {
+    res.send("Backchodi nhi chup chap bas temperature dekh !!");
+});
 
 app.post('/', function (req, res) {
     let city = req.body.city;
@@ -30,8 +34,8 @@ app.post('/', function (req, res) {
             }
         }
     });
-})
+});
 
 app.listen(8000, function () {
     console.log('Example app listening on port 8000!')
-})
+});

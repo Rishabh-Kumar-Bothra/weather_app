@@ -4,21 +4,22 @@
     <meta charset="utf-8">
     <title>Test</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<div class="container">
-    <fieldset>
-        <form action="/" method="post">
-            <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
-            <input type="submit" class="ghost-button" value="Get Weather">
-        </form>
+<div class="col-9" style="padding-top: 100px; margin-left: auto">
+    <fieldset class="container border border-dark">
+        <form action="/" method="post"><br><br>
+            <input name="city" type="text" class="form-control" placeholder="Enter a City" required><br><br>
+            <input type="submit" class="btn btn-outline-primary" value="Get Weather">
+        </form><br>
         <% if(weather !== null){ %>
-        <p><%= weather %></p>
+       <br> <p><%= weather %></p>
         <% } %>
 
         <% if(error !== null){ %>
-        <p><%= error %></p>
+     <br>   <p><%= error %></p>
         <% } %>
     </fieldset>
 </div>
