@@ -4,7 +4,8 @@ const request = require('request');
 const app = express();
 var port = process.env.PORT || 8000;
 
-const apiKey = '41264f7eab00cbfa89eb61ebc26f703a';
+const Key_1 = require('./config');
+var apiKey = Key_1.KEY_1;
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
